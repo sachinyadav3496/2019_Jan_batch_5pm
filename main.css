@@ -1,0 +1,22 @@
+
+
+
+
+.left { float:left;
+		position: absolute;
+		width:20%;
+		background: green; }
+
+.middle { float:left;
+		position: absolute;
+		width:60%;
+		background: blue; }
+
+.right { float:left;
+		position: absolute;
+		width:20%;
+		background: orange; }
+
+
+footer { 
+clear: both; }
