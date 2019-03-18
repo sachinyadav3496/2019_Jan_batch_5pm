@@ -1,0 +1,70 @@
+
+<!Doctype html> <!-- for html 5-->
+<html lang='en-us'>
+
+<head>
+
+    <title>HOME</title>
+    <link rel='stylesheet' href='/static/css/app2.css'
+    type='text/css'>
+    {% block head %}
+
+    {% endblock %}
+</head>
+
+<body>
+<div id="header">
+
+    <h1>Grras Solutions Pvt. Ltd., Jaipur</h1>
+    
+    <table>
+        <tr>
+        <td>
+            <a href='/'>HOME</a>
+        </td>
+        <td>
+            <a href='/contact/'>ContactUs</a>
+        </td>
+        <td>
+            <a href='#'>AboutUs</a>
+        </td>
+        <td>
+            <a href='#'>Login</a>
+        </td>
+    </tr>
+    </table>
+
+</div>
+
+
+<div id='side1'>
+   {% block side1 %}
+   {% endblock %}
+</div>
+
+<div id='middle'>
+    {% block middle %}
+    {% endblock %}
+</div>
+
+<div id="side2">
+
+    <p>Buy One Get Two absolutely free</p>
+ {% block side2 %}
+ {% endblock %}
+</div>
+
+
+
+
+<div id='footer'>
+    <h1> All Rights are Reserved at &copy;Grras Soultions</h1>
+    {% block footer %}
+    {% endblock %}
+</div>
+
+
+</body>
+
+
+</html>

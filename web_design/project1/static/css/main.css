@@ -1,0 +1,13 @@
+
+body {
+    background:pink;
+}
+
+h1 { color:red;
+ border: 2px solid green;}
+
+h2 { color:yellow;}
+
+p { font-size: 50px; 
+    
+    color:gray;}

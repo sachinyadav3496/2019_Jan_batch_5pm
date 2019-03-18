@@ -1,0 +1,46 @@
+
+
+body { 
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+#middle h1 { 
+    color:green;
+}
+
+#header {
+    margin: 0;
+    padding: 0;
+     
+      width:100%;
+      top : 0 ;
+    }
+
+     table { float:right;}
+#footer {
+    clear:both;
+    margin: 0;
+    padding: 0;
+     }
+ 
+#side1 h2 { color:gray;}
+#side2 h2 { color:gray;}
+#side1 { float:left;
+    margin: 0;
+    padding: 0;
+      width:20%;}
+#side2 {
+    float:left;
+    margin: 0;
+    padding: 0;
+      width:20%;}
+
+#middle {  width:60%;
+    margin: 0;
+    padding: 0;
+    float:left;
+    text-align: center;
+    }
