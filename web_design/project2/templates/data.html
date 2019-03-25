@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Home</title>
+    <link type='text/css' rel='stylesheet' href="/static/css/main.css">
+</head>
+<body>
+        <table>
+                <tr>
+                    <td> <a href='/'>HOME</a></td>
+                    <td> <a href='/data/'>DATA</a></td>
+                </tr>
+            </table>
+
+    <h1 id='main_h1'>Welcome to Data Page of Your Site</h1>
+    <h2>Testing 1 2 3 4 5 </h2>
+    <h1 id='main_h2'>I am another Heading</h1>
+
+
+    {% if username %}
+    <h1 id="main_h1"> Welcome User {{ username }}</h1>
+    {% endif %}
+
+
+</body>
+
+</html>

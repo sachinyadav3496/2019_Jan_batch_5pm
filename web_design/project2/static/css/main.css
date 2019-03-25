@@ -1,0 +1,18 @@
+body { 
+    background : gray;
+}
+
+#main_h1{ color: white; 
+    font-size: 70px;
+}
+#main_h2 { color:red;}
+
+h2 { color: purple; }
+
+table { 
+    float: right;
+}
+
+#pattern { 
+    float: right;
+}

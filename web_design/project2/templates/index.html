@@ -1,0 +1,29 @@
+<!Doctype html>
+<html>
+<head>
+    <link type='text/css' rel='stylesheet' href="{{ url_for('static',filename='css/main.css') }}">
+    <title>Home</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td> <a href='/'>HOME</a></td>
+        <td> <a href='/data/'>DATA</a></td>
+    </tr>
+</table>
+    <h1>Welcome Flask Powered WebSite</h1>
+    <h2>Hello World Welcome to web page</h2>
+
+    <img src="{{ url_for('static',filename='images/one.jpg') }}" height='500px'
+    width='500px' alt="No image found">
+<div id='pattern'>   
+    {% for each_line in pattern %}
+    <p> {{ each_line }} </p>
+   {% endfor %}
+</div>
+
+
+</body>
+
+</html>
