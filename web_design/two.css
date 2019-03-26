@@ -1,0 +1,77 @@
+
+
+#header { 
+	text-align: center;
+	height: 20%;
+	width: 100%;
+	margin: 0% 0% 80% 0%;
+	padding: 0%;
+	color: white;
+	background: pink;
+ position:absolute;
+ }
+
+#left { 
+	height: 60%;
+	width: 25%;
+margin: 20% 75% 0% 0%;
+padding: 0;	
+color:white;
+background:red;
+float: left; 
+ position:absolute;
+}
+
+#middle { 
+text-align: center;
+margin: 20% 25% 0% 25%;
+padding: 0%;
+	height: 60%;
+	width: 50%;
+color:white;
+background: green;
+float:left;
+ position:absolute;
+
+ }
+
+ #right  { 
+ 	margin: 20% 0% 0% 75%;
+	padding: 0px;
+	height: 60%;
+	width: 25%;
+ color:white;
+ float: left;
+ background: blue;
+  position:absolute;
+ }
+
+ #footer { 
+ 	text-align: center;
+ 	height: 20%;
+	width: 100%;
+ margin: 80% 0% 0% 0%;
+padding: 0%;
+ color:white;
+ background: darkgray;
+ clear: both; 
+ position:absolute;
+}
+
+
+#form_div { 
+margin: 10%;
+border: 5px solid white;
+padding: 10%;
+ }
+
+
+ #gallary { 
+
+ background: green;
+  }
+
+  #gallary td
+  { 
+  			border : 5px solid white;	
+  	 }
