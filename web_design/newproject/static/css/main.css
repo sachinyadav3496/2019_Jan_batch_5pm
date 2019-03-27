@@ -1,0 +1,28 @@
+body { 
+
+    margin:0; 
+    padding: 0;
+}
+
+#header { 
+    width: 100%; 
+}
+
+#left { 
+    width: 25%; 
+    float: left;
+}
+
+#center { 
+    width: 50%; 
+    float: left;
+}
+#right { 
+    width: 25%;
+    float : left ;
+}
+
+#footer { 
+    width: 100%; 
+    clear: both;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' type='text/css' href='/static/css/main.css'>
+    {% block head %}
+
+    {% endblock %}
+</head>
+
+<body>
+
+    <div id='header'>
+        <h1>Grras Solutions Pvt. Ltd, Jaipur</h1>
+        {% block header %}
+
+        {% endblock %}
+    </div>
+
+
+    <div id='left'>
+        <h1> This is left part </h1>
+        {% block left %}
+
+        {% endblock %}
+    </div>
+
+    <div id='center'>
+        <h1>Hi this is main portion </h1>
+        {% block center %}
+
+        {% endblock %}
+    </div>
+
+
+    <div id='right'>
+        <h1>Hi I am right part</h1>
+        {% block right %}
+
+        {% endblock %}
+    </div>
+
+    <div id='footer'>
+
+        {% block footer %}
+
+        {% endblock %}
+        
+        <h2> All Rights Reserved at &copy; Grrras Solutions Pvt. Ltd, Jaipur since 2008 </h2>
+
+    </div>
+
+</body>
+
+
+</html>
