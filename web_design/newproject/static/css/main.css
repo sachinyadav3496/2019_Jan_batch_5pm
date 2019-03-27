@@ -1,28 +1,53 @@
 body { 
 
-    margin:0; 
-    padding: 0;
+    margin:0px; 
+    padding: 0px;
 }
 
 #header { 
-    width: 100%; 
+    padding: 10px;
+    background: gray;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin:0px; 
+     
 }
 
 #left { 
     width: 25%; 
     float: left;
+    margin:0px; 
+    
 }
 
 #center { 
+    text-align: center;
     width: 50%; 
     float: left;
+    margin:0px; 
+    
 }
 #right { 
     width: 25%;
     float : left ;
+    margin:0px; 
+    
 }
 
 #footer { 
+    padding: 25px;
+    text-align: center;
     width: 100%; 
     clear: both;
+    margin:0px; 
+    
+
+    background: gray;
+    color: white;
+}
+
+
+#login_form { 
+padding: 50px;
 }

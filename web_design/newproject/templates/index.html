@@ -1,1 +1,22 @@
 {% extends "base.html" %}
+
+{% block header %}
+
+<h2> Welcome to First Page </h2>
+
+{% endblock %}
+
+
+
+{% block center %}
+
+<div id='login_form'>
+    <form action="/login/" method="POST">
+        <p>Username : <input type="text" name='name' placeholder="eg. john" required> </p>
+        <p>Password : <input type="Password" name='password' placeholder="*****" required></p>
+        <p>Rembeber Me ? <input type='checkbox'>
+        <input type="submit"></p>
+    </form>
+</div>
+
+{% endblock %}
