@@ -55,13 +55,14 @@ padding: 50px;
 
 table { background-color: gray;
         color: white;   
-    font-size: 35px;}
+    font-size: 35px;
+padding: 15px;}
 
     tr { 
-        padding: 5px; 
+        padding: 35px; 
         border: 2px solid white;
     }
     td { 
-        padding: 5px;
+        padding: 15px;
         border : 2px solid white;
     }

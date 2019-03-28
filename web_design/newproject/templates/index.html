@@ -10,6 +10,9 @@
 
 {% block center %}
 
+{% if error %}
+<h1 style='color:red'> {{ error }}</h1>
+{% endif %}
 <div id='login_form'>
     <form action="/login/" method="POST">
         <p>Username : <input type="text" name='name' placeholder="eg. john" required> </p>
