@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block center %}
+
+<div id='login_form'>
+    <form action="/mk_signup/" method="POST">
+        <p>First Name &nbsp;&nbsp;&nbsp; : <input type="text" name='fname' placeholder="eg. john" required> </p>
+        <p>Last Name &nbsp;&nbsp;&nbsp; &nbsp;: <input type="text" name='lname' placeholder="eg. watson" required></p>
+        <p>Username &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;: <input type="text" name='name' placeholder="eg. john" required> </p>
+        <p>Password &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;: <input type="Password" name='password' placeholder="*****" required></p>
+        <p>Email &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;: <input type="email" name='email' placeholder="eg. john@hotmail.com" required> </p>
+        <p>Phone Number &nbsp; : <input type="text" name='ph_no' placeholder="+911234567890" required></p>
+        <p>Date Of Birth : <input type="date" name='dob' required> </p>
+        <p>
+        <input type="submit" value="Signup"> &nbsp;&nbsp;&nbsp;&nbsp;
+        <button action='/signup/'>
+        <a href='/' id='button'>LOGIN</a>
+    </button>
+        </p>
+    </form>
+</div>
+
+{% endblock %}

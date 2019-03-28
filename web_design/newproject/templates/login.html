@@ -5,8 +5,19 @@
 {% block center %}
 
 <div>
-   <h1> Welcome user {{ name }} </h1> 
-   <h1> with Password {{ password }} </h1>
+   <!-- <h1> Welcome user {{ data.username }} </h1> 
+   <h1> with Password {{ data.password }} </h1> -->
+   <h1> Here is Your Details </h1>
+   <table>
+
+   {% for key,value in data.items()  %}
+<tr>
+   <td>{{ key }} </td>
+   <td>{{ value }}</td>
+</tr> 
+   {% endfor %}
+   </table>
+
 </div>
 
 {% endblock %}
