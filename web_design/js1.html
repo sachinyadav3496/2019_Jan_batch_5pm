@@ -1,0 +1,26 @@
+<!Doctype html>
+<html>
+<head>
+<title>Hello World</title>
+</head>
+<body>
+<h1>Hello World Welcome to JavaScript</h1>
+<input type='text' > 
+<button> Click Me! </button>
+
+<script type='text/javascript'>
+var body = document.querySelector("body")
+var button = document.querySelector("button")
+var input = document.querySelector("input")
+button.addEventListener("click",
+	function() { 
+		//if ( body.style.color == 'red' ) { body.style.color= 'gray';}
+		//else { body.style.color = 'red';}
+		body.style.background = input.value;
+		input.value = ''
+	}
+	)
+
+</script>
+</body>
+</html>
