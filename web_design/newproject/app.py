@@ -16,7 +16,7 @@ def login():
     for user in os.listdir(location) : 
         if user == uname : 
             data = json.load(open(os.path.join(location,uname)))
-            if data['password'] == password : 
+            if data['Password'] == password : 
                 return render_template('login.html',title='login',data=data)
             else : 
                 error = "Invalid Password Try Again"
@@ -44,9 +44,18 @@ def signup():
     "Phone Number" : request.form['ph_no'],
     "Date of Birth" : request.form['dob'],
     }
+    for user in os.listdir(location) : 
+        if data["UserName"] == user : 
+            error = "User Already Exists Please Try Again"
+            return render_template('index.html',title='error',error=error)
+    else : 
+        fp  = open(os.path.join(location,data["UserName"]),"w")
+        json.dump(data,fp)
+        fp.close()
+        return render_template('login.html',title='Profile',data=data)
     #print(type(request.form['dob']))
     #print(request.form['dob'])
-    return render_template('login.html',title='Profile',data=data)
+    
 
 
 

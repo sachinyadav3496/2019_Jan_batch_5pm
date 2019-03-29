@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<center>
+<form method='post' action='/update' >
+
+	<p> Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type='text' autofocus placeholder='eg. john' name='name' required> </p>
+	<p>Course &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	<select name='language' placeholder='language'>
+	<option value='Python' >PYTHON</option>
+	<option value='Linux' >Linux</option>
+	<option value='Devops' >DevOPS</option>
+	<option value='Cloud Computing' >Cloud Computing</option>
+	<option value='DataScience' >Data Science</option>
+
+	</select>
+	</p>
+	<p>Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type='email' placeholder='eg. sachin@gmail.com' name='email' required> </p>
+	<p> Phone Number &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type='number' autofocus placeholder='eg. 1234567890' name='ph_no'   required> </p>
+
+	<p> College Name &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type='text' autofocus placeholder='eg. john' name='college_name' required> </p>
+	<p> Batch Join Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type='datetime' autofocus placeholder='eg. john' name='date' required> </p>
+
+	<p><input type='submit' value='Submit' ></p>
+</form>
+</center>
+
+{% endblock %}`
