@@ -1,0 +1,15 @@
+
+
+{% extends "layout.html" %}
+
+
+{% block main %}
+
+
+{% for key,value in data.items() %}
+
+<p style='color:#333333'> <span style='color:red'>{{ key }}</span> 
+    &nbsp;&nbsp;&nbsp;&nbsp; {{ value }} </p>
+
+    {% endfor %}
+{% endblock %}

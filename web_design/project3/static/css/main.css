@@ -1,0 +1,48 @@
+
+
+body { 
+    background: #efefef;
+    margin: 0px;
+    padding: 0px; 
+}
+
+
+#header { 
+text-align: center;
+    width: 100%; 
+    margin: 0px;
+    padding: 0px; 
+
+
+}
+
+
+#right { 
+    margin: 0px;
+    width : 20%; 
+    padding: 0px;
+    float : left;  
+
+}
+#main { 
+    margin: 0px;
+    width : 60%; 
+    padding: 100px;
+    float : left; 
+
+
+}
+#left { 
+    margin: 0px;
+    width : 20%; 
+    padding: 0px;
+    float : left;  
+
+}
+
+#footer { 
+    clear: both;
+    text-align: center;
+    width: 100%;
+}
+

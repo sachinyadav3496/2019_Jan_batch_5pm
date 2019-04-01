@@ -1,0 +1,1 @@
+{"email": "rajat@gmail.com", "password": "redhat", "first_name": "rajat", "last_name": "goyal"}

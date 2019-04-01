@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet"  href='{{ url_for("static",filename="css/bootstrap.css") }}'> 
+    <link rel='stylesheet' type='text/css' href='{{ url_for("static",filename="css/main.css") }}'>
+    {% block head %}
+    {% endblock %}
+
+</head>
+
+
+
+<body>
+
+    <div id='header'>
+
+        <h1>Hello Welcome to some application </h1>
+        {% block header %}
+        {% endblock %}
+
+    </div>
+
+
+    <div id='left'>
+           <hr>
+    {% block left %}
+    {% endblock %}
+        </div>
+    
+    
+<div id='main'>
+   <hr>
+   {% block main %}
+
+   {% endblock %}
+</div>
+
+    
+    <div id='right'> 
+            <hr>
+
+
+            {% block right %}
+            {% endblock %}
+        </div>
+    
+    <div id='footer'>
+        {% block footer %}
+        {% endblock %}
+       <p>&copy; all rights reveserved at somecompany</p>
+
+    </div>
+    
+
+</body>
+
+</html>
