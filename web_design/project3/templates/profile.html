@@ -5,6 +5,7 @@
 
 {% block main %}
 
+<div id='profile'>
 
 {% for key,value in data.items() %}
 
@@ -12,4 +13,6 @@
     &nbsp;&nbsp;&nbsp;&nbsp; {{ value }} </p>
 
     {% endfor %}
+
+</div>
 {% endblock %}

@@ -27,8 +27,9 @@ text-align: center;
 #main { 
     margin: 0px;
     width : 60%; 
-    padding: 100px;
+    padding: 0px;
     float : left; 
+   
 
 
 }
@@ -46,3 +47,7 @@ text-align: center;
     width: 100%;
 }
 
+#form, #profile{ 
+    
+    padding: 100px; 
+}

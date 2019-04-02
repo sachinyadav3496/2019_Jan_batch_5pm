@@ -15,9 +15,18 @@
 <body>
 
     <div id='header'>
+    
+        <div>
+            <p> <span>Hello Welcome to some application</span>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span><a href='/'>HOME</a></span>
+                {% if email %} 
+                <span><a href="/logout/">Logout</a></span>
+                {% endif %}
 
-        <h1>Hello Welcome to some application </h1>
-        {% block header %}
+            </p>
+        </div>
+                {% block header %}
         {% endblock %}
 
     </div>
