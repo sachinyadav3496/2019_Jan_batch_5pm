@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block main %}
+<div>
+<table>
+    <tr>
+        <td> Email </td>
+        <td> First Name</td>
+        <td> Last Name </td>
+    </tr>
+    {% for item in data %}
+    <tr>
+        {% for key,value in item.items() %}
+    <td> {{ value }}</td>
+
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+
+{% endblock %}
