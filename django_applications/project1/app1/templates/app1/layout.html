@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ title }}</title>
+    
+    {% block head %}
+    {% endblock %}
+
+</head>
+
+
+
+<body>
+
+    <div id='header'>
+    
+        <div>
+            <p> <span>Hello Welcome to some application</span>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span><a href='/'>HOME</a></span>
+                {% if email %} 
+                <span><a href="/logout/">Logout</a></span>
+                {% endif %}
+
+            </p>
+        </div>
+                {% block header %}
+        {% endblock %}
+
+    </div>
+
+
+    <div id='left'>
+           <hr>
+    {% block left %}
+    {% endblock %}
+        </div>
+    
+    
+<div id='main'>
+   <hr>
+   {% block main %}
+
+   {% endblock %}
+</div>
+
+    
+    <div id='right'> 
+            <hr>
+
+
+            {% block right %}
+            {% endblock %}
+        </div>
+    
+    <div id='footer'>
+        {% block footer %}
+        {% endblock %}
+       <p>&copy; all rights reveserved at somecompany</p>
+
+    </div>
+    
+
+</body>
+
+</html>

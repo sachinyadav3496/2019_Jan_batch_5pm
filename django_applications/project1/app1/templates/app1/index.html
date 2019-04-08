@@ -1,4 +1,42 @@
+{% extends "app1/layout.html" %}
+
+
+{% block main %}
+<div id='form'>
+    <p style='color:red'>{{ error }}</p>
+<form method="POST" action="/login/">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input name='email' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input name='password' type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <!--
+        <div class="form-group">
+                <label for="exampleFormControlSelect1">Course</label>
+                <select class="form-control" id="exampleFormControlSelect1" name='course'>
+                  <option value='python'>Python</option>
+                  <option value='ds'>Data Science</option>
+                  <option value='web'>Web Design</option>
+                  <option value='linux'>Linux</option>
+                  <option value='cloud'>Cloud</option>
+                </select>
+              </div>
+            -->
+
+              
+        <button type="submit" class="btn btn-primary">Login</button>
+        <a class="btn btn-primary" href="/signup/" role="button">Signup</a>
+
+    </form>
+</div>
+
+{% endblock %}
 
 
 
-<h1 style='color:red'>Welcome to First Page Powered by Django</h1>
+
+
