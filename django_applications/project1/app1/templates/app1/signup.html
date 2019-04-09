@@ -1,9 +1,10 @@
-{% extends "layout.html" %}
+{% extends "app1/layout.html" %}
 
 
 {% block main %}
 <div id='form'>
-<form method="POST" action="/mk_signup/">
+<form method="POST" action="/app1/mk_signup/">
+    {% csrf_token %}
         <div class="form-group">
           <label for="exampleInputEmail1">Email</label>
           <input name='email' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="eg. someone@somesite.com">
@@ -26,7 +27,7 @@
 
               
         <button type="submit" class="btn btn-primary">Signup</button>
-        <a class="btn btn-primary" href="/" role="button">Login</a>
+        <a class="btn btn-primary" href="/app1/" role="button">Login</a>
 
     </form>
 </div>

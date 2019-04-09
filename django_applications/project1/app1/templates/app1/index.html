@@ -4,7 +4,8 @@
 {% block main %}
 <div id='form'>
     <p style='color:red'>{{ error }}</p>
-<form method="POST" action="/login/">
+<form method="POST" action="/app1/login/">
+  {% csrf_token %}
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input name='email' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -29,7 +30,7 @@
 
               
         <button type="submit" class="btn btn-primary">Login</button>
-        <a class="btn btn-primary" href="/signup/" role="button">Signup</a>
+        <a class="btn btn-primary" href="/app1/signup/" role="button">Signup</a>
 
     </form>
 </div>
