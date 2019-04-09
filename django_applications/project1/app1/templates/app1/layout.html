@@ -3,7 +3,11 @@
 
 <head>
     <title>{{ title }}</title>
-    
+    {% load static %}
+    <link rel='stylesheet' type='text/css'
+    href="{% static 'app1/main.css' %}" >
+    <link rel='stylesheet' type='text/css'
+    href="{% static 'app1/bootstrap.css' %}" >
     {% block head %}
     {% endblock %}
 
