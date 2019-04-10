@@ -1,3 +1,17 @@
 
 
 <h1>Welcome to app2</h1>
+
+{% if error %}
+<p style='color:red'> {{ error }} </p>
+{% endif %}
+<form style='text-align: center;' method='post' 
+        action='/app2/login/'> 
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type='submit' value='Login'>
+</form>
+
+<a href="/app2/signup/"> Signup </a>
