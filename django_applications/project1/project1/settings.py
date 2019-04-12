@@ -31,12 +31,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'app1.apps.App1Config',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    'app2',
+    
 ]
 
 MIDDLEWARE = [
@@ -80,6 +84,19 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql', #mysqlclient
+#         #python -m pip install mysqlclient
+#         'NAME': 'project1',
+#         'HOST' : 'localhost',
+#         'PORT' : 3306,
+#         'USER' : 'root',
+#         'PASSWORD' : ''
+#     }
+# }
+
 
 
 # Password validation

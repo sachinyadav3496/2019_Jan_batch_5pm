@@ -1,13 +1,13 @@
 
 
-{% extends "layout.html" %}
+{% extends "app1/layout.html" %}
 
 
 {% block main %}
 
 <div id='profile'>
 
-{% for key,value in data.items() %}
+{% for key,value in data.items %}
 
 <p style='color:#333333'> <span style='color:red'>{{ key }}</span> 
     &nbsp;&nbsp;&nbsp;&nbsp; {{ value }} </p>
