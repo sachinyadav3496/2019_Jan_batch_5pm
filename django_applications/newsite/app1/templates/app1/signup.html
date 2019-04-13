@@ -1,0 +1,18 @@
+<!Doctype html>
+
+<html>
+
+	<body>
+
+		<form method="POST" action="/app1/mk_signup/">
+				{% csrf_token %}
+
+				{{ form.as_p }}
+
+				<input type='submit' value='SignUp'>
+
+		</form>
+
+
+	</body>
+</html>

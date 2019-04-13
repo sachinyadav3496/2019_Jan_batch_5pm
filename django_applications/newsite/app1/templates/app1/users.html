@@ -1,0 +1,27 @@
+<!Doctype html>
+
+<html>
+
+	<body>
+		<table>
+			<tr>
+				<td>First Name</td>
+				<td>Last Name</td>
+				<td> Email </td>
+				<td> Password </td>
+			
+
+			{% for each_user in data %}
+			<tr>
+	
+			{% for key,value in each_user.items %}
+				<td> {{ value }} </td>
+			{% endfor %}
+			</tr>
+
+			{% endfor %}
+		</table>
+
+
+	</body>
+</html>

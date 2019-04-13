@@ -1,0 +1,19 @@
+<!Doctype html>
+
+
+<html>
+
+	<body>
+
+		<form method="POST" action="/app1/login/" style='font-size:35;text-align:center'>
+
+			{% csrf_token %}
+			
+
+			{{ form }}
+
+			<input type='submit' value='login'>
+
+		</form>
+	</body>
+</html>
