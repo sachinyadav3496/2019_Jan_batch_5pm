@@ -1,10 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from django.contrib import messages
 from . import forms 
 from app1.models import User 
 def index(request):
-    e = "Please Sign In to Enjoy Our Services"
-    return render(request,'app1/index.html',{'error':e,'title':'HOME'})
+    if 'email' in request.session :
+        email = request.session['email'] 
+        u1 = User.objects.get(email=email)
+        data = { 
+                        'First Name': u1.first_name,
+                        'Last Name' : u1.last_name,
+                        'Email' : u1.email,
+                    }
+        return render(request,'app1/profile.html',{'data':data,'title':'Profile','flag':True})
+
+    else : 
+        e = "Please Sign In to Enjoy Our Services"
+        return render(request,'app1/index.html',{'error':e,'title':'HOME'})
 
 
 def data(request):
@@ -21,8 +33,11 @@ def login(request):
             password = form.cleaned_data['password']
             try : 
                 u1 = User.objects.get(email=email)
-            except User.DoesNotExist as e : 
-                return render(request,"app1/index.html",{'error':e,'title':'LOGIN'})
+            except User.DoesNotExist as e :
+                e = "NO such User Exists"
+                messages.add_message(request, messages.ERROR, e)
+                return redirect(to="index")    
+                #return render(request,"app1/index.html",{'error':e,'title':'LOGIN'})
             else :
                 if password == u1.password : 
                     data = { 
@@ -30,18 +45,26 @@ def login(request):
                         'Last Name' : u1.last_name,
                         'Email' : u1.email,
                     }
-                    
-                    return render(request,'app1/profile.html',{'data':data,'title':'Profile'})
+                    request.session['email'] = u1.email 
+                    return render(request,'app1/profile.html',{'data':data,'title':'Profile','flag':True})
                 else : 
                     e = "Invaid Password Try Again"
-                    return render(request,'app1/index.html',{'error':e,'title':'HOME'})  
+                    messages.add_message(request, messages.ERROR, e)
+                    return redirect(to="index")
+                    #return render(request,'app1/index.html',{'error':e,'title':'HOME'})  
 
         else : 
             e = "Invalid Data Provided..Please Mind your Input"
-            return render(request,'app1/index.html',{'error':e,'title':'HOME'})       
+            messages.add_message(request, messages.ERROR, e)
+            return redirect(to="index")
+                    
+            #return render(request,'app1/index.html',{'error':e,'title':'HOME'})       
     else : 
         e = "Request Method Does Not Allowed"
-        return render(request,'app1/index.html',{'error':e,'title':'HOME'})
+        messages.add_message(request, messages.ERROR, e)
+        return redirect(to="index")
+                    
+        #return render(request,'app1/index.html',{'error':e,'title':'HOME'})
 
 def mksignup(request):
     if request.method == "POST" : 
@@ -69,3 +92,8 @@ def mksignup(request):
         error = "Invalid Form Method, We only accept POST"
         return render(request,'app1/index.html',{'error':error,'title':"HOME"})
         
+def logout(request):
+    e = "...Thanks for Being Here...."
+    messages.add_message(request, messages.INFO, e)
+    del request.session['email']
+    return redirect(to='index')

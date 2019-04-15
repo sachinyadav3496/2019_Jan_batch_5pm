@@ -3,7 +3,20 @@
 
 {% block main %}
 <div id='form'>
+
+  {% if messages %}
+  {% for message in messages %}
+   <!-- {% if message.tags == 'error' %}
+  <script>
+    alert("Error Invalid Password")
+  </script>
+  {% endif %} -->
+  <p style='color:red'>{{ message.tags }} : {{ message }}</p>
+  {% endfor %}
+
+  {% else %}
     <p style='color:red'>{{ error }}</p>
+  {% endif %}
 <form method="POST" action="/app1/login/">
   {% csrf_token %}
         <div class="form-group">

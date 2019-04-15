@@ -22,7 +22,10 @@
         <div>
             <p> <span>Hello Welcome to some application</span>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span><a href='/'>HOME</a></span>
+                <span><a href='/app1/'>HOME</a></span>
+                {% if flag %}
+                <span><a href='/app1/logout/'>LOGOUT</a></span>
+                {% endif %}
                 {% if email %} 
                 <span><a href="/logout/">Logout</a></span>
                 {% endif %}
