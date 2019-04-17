@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.contrib import messages
 from . import forms 
 from app1.models import User 
+from random import randint 
+from django.core.mail import send_mail 
 def index(request):
     if 'email' in request.session :
         email = request.session['email'] 
@@ -97,3 +99,71 @@ def logout(request):
     messages.add_message(request, messages.INFO, e)
     del request.session['email']
     return redirect(to='index')
+
+def forgot(request): 
+    form = forms.ForgotPassword()
+    return render(request,'app1/forgot.html',{'form':form,'title':"RESET PASSWORD"})
+
+def reset_password(request):
+    if request.method == "POST" : 
+        form = forms.ForgotPassword(request.POST)
+        if form.is_valid() : 
+            email = form.cleaned_data['email']
+            try : 
+                u1 = User.objects.get(email=email)
+            except User.DoesNotExist as e : 
+                error = "No such User Exists"
+                messages.add_message(request, messages.ERROR, error)
+            else : 
+                form = forms.ResetPassword()
+                #logic to generate otp
+                otp = str(randint(111111,999999))
+                request.session['otp'] = otp 
+                request.session['otp_email'] = email
+                to = email 
+                mail_from = "Grras Solutions"
+                subject = "OTP Verification"
+                messege = f"Please Provide This OTP {otp} to reset your Password."
+
+                send_mail(
+                    subject,
+                    messege,
+                    mail_from,
+                    [to,],
+                    fail_silently=False,)
+                
+                return render(request,"app1/reset.html",{'form':form,'error':'Please Provide OTP To RESET Password'})
+        else : 
+            error = "Invalid DATA Provided"
+            messages.add_message(request, messages.ERROR, error)
+
+    else : 
+        error = "Invalid Method Provided"
+        messages.add_message(request, messages.ERROR, error)
+    return redirect(to='index')
+
+
+
+def verify_otp(request):
+    if request.method == 'POST' : 
+        form = forms.ResetPassword(request.POST)
+        form.is_valid()
+        otp = form.cleaned_data['otp']
+        otp_verify = request.session['otp']
+        password = form.cleaned_data['password']
+        email = request.session['otp_email']
+        if otp == otp_verify : 
+            u1 = User.objects.get(email=email)
+            u1.password = password
+            u1.save()
+            error = "Password Updated Sucessfully...Login to enjoy your services"
+            messages.add_message(request, messages.ERROR, error)
+            return redirect(to='index')
+
+        else :
+            return render(request,"app1/reset.html",{'form':form,'error':'Invaid OTP Try Again'})
+
+    else : 
+        error = "Invalid Method Provided"
+        messages.add_message(request, messages.ERROR, error)
+        return redirect(to='index')

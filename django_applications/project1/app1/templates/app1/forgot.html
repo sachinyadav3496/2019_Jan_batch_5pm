@@ -1,0 +1,18 @@
+
+{% extends "app1/layout.html" %}
+
+
+{% block main %}
+
+<form method="POST" action="/app1/reset_password/">
+
+{% csrf_token %}
+
+{{ form }}
+
+<br>
+<input type='submit' >
+
+</form>
+
+{% endblock %}

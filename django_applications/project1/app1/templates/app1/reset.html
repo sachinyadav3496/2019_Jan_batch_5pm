@@ -1,0 +1,17 @@
+
+
+{% extends "app1/layout.html" %}
+
+
+{% block main %}
+<p style='color:red;text-align: center;'>{{ error }}</p>
+<form method="POST" action="/app1/verify_otp/">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+<br>
+    <input type='submit' value="verify">
+</form>
+
+{% endblock %}
