@@ -2,7 +2,8 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from . import forms 
-from app1.models import User 
+#from app1.models import User 
+from django.contrib.auth.models import User
 from random import randint 
 from django.core.mail import send_mail 
 def index(request):
@@ -27,6 +28,8 @@ def data(request):
 def signup(request):
     return render(request,"app1/signup.html",{'title':'Signup'})
 
+
+from django.contrib.auth import authenticate
 def login(request):
     if request.method == "POST" : 
         form = forms.Login(request.POST)
@@ -41,7 +44,9 @@ def login(request):
                 return redirect(to="index")    
                 #return render(request,"app1/index.html",{'error':e,'title':'LOGIN'})
             else :
-                if password == u1.password : 
+                u1 = authenticate(username=u1.username,password=password)
+                if u1 is not None : 
+                
                     data = { 
                         'First Name': u1.first_name,
                         'Last Name' : u1.last_name,
@@ -72,14 +77,16 @@ def mksignup(request):
     if request.method == "POST" : 
         form  = forms.Signup(request.POST)
         if form.is_valid() : 
+            username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             fname = form.cleaned_data['fname']
             lname = form.cleaned_data['lname']
             password  = form.cleaned_data['password']
             try : 
-                u1 = User.objects.get(email=email)
+                User.objects.get(email=email)
             except User.DoesNotExist as e : 
-                user = User(email=email,first_name=fname,last_name=lname,password=password)
+                user = User(username=username,email=email,first_name=fname,last_name=lname)
+                user.set_password(password)
                 user.save()
                 return render(request,"app1/index.html",{'error':"Account sucessfully created please login to use our services",'title':'HOME'})
             else : 

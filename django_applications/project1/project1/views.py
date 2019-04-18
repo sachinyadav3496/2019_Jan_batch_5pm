@@ -9,6 +9,7 @@ def index(request):
     <body><div>
     <a href="/app1/">app1</a>
     <a href="/app2/">app2</a>
+    <a href='/blog/'>blog</a>
     </div>
     </body>
     </html>

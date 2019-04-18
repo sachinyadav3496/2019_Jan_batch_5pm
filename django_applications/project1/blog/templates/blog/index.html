@@ -1,0 +1,34 @@
+
+<!Doctype html>
+
+<html>
+
+<head>
+    <title>HOME</title>
+</head>
+
+
+<body >
+
+<h1>All Blogs <span><a href="{% url 'post_blog' %}">POST</a></span> </h1>
+<div style='margin:0 200px;'>
+    {% if error %}
+<p style='color:red'>{{ error }}</p>
+{% endif %}
+{% for each_post in data %}
+<div style='margin: 0 auto;padding:20px;'>
+<h1> {{ each_post.title }}</h1>
+<h5> {{ each_post.pub_date }} : {{ each_post.author }}</h5>
+<h6> {{ each_post.topic }} </h6>
+<p>
+    {{ each_post.content}}
+</p>
+</div>
+
+{% endfor %}
+</div>
+
+</body>
+
+
+</html>

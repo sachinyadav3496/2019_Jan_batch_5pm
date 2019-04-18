@@ -1,0 +1,22 @@
+
+<!Doctype html>
+<html>
+<head>
+    <title> UPDate</title>
+</head>
+
+<body>
+<h1> Please Share your Story </h1>
+
+<form action="/blog/update/" method="POST" >
+
+    {% csrf_token %}
+
+{{ form.as_p }}
+
+<br> 
+<input type='submit' > 
+</form>
+</body>
+
+</html>
