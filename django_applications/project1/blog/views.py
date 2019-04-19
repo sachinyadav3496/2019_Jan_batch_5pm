@@ -3,6 +3,9 @@ from django.views.generic import ListView
 from django.http import HttpResponse
 from blog.models import Story
 from blog.forms import Blog_Form
+from django.contrib.auth.models import User 
+from django.utils import timezone
+from django.contrib import messages 
 # Create your views here.
 
 class Blog(ListView) : 
@@ -24,9 +27,30 @@ class Blog(ListView) :
 
 class UpdateBlog(ListView):
     def get(self,request):
-        form = Blog_Form()
-        return render(request,"blog/update_blog.html",{ 'form':form })
+        if 'email' in request.session : 
+            form = Blog_Form()
+            return render(request,"blog/update_blog.html",{ 'form':form })
+        else : 
+            e = "Please Login to Post your Blogs"
+            messages.add_message(request, messages.ERROR, e)
+            return redirect(to="index")
+
+    def post(self,request):
+        return redirect(to='/blog/',error="We handle only get Request to this page")
+    
+
+class PostBlog(ListView):
+    def get(self,request):
+        return redirect(to='/blog/',error='only post method allowed to post a new blog')
         
     def post(self,request):
-        return redirect(to='/blog/',error="We handle only Post Request to this page")
-    
+        form = Blog_Form(request.POST)
+        form.is_valid()
+        title = form.cleaned_data['title']
+        topic = form.cleaned_data['topic']
+        content= form.cleaned_data['content']
+        author = User.objects.get(email=request.session['email'])
+        pub_date = timezone.now().date()
+        s1 = Story(title=title,topic=topic,pub_date=pub_date,content=content,author=author)
+        s1.save()
+        return redirect(to='/blog/',error="Post Published Sucessfully")
