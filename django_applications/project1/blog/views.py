@@ -25,7 +25,6 @@ class Blog(ListView) :
 class UpdateBlog(ListView):
     def get(self,request):
         form = Blog_Form()
-
         return render(request,"blog/update_blog.html",{ 'form':form })
         
     def post(self,request):
