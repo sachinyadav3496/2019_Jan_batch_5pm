@@ -161,7 +161,7 @@ def verify_otp(request):
         email = request.session['otp_email']
         if otp == otp_verify : 
             u1 = User.objects.get(email=email)
-            u1.password = password
+            u1.set_password(password)
             u1.save()
             error = "Password Updated Sucessfully...Login to enjoy your services"
             messages.add_message(request, messages.ERROR, error)
